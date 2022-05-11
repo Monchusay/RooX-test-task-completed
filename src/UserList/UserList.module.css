@@ -1,0 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.MainObj {
+    width: 85%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.MainObjHeader {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 900;
+    font-size: 14px;
+    line-height: 16px;
+    color: black;
+}
+.MainObjItem {
+    width: 95%;
+    height: 110px;
+}
+.MainObjUsersCount {
+    padding-top: 1210px;
+    padding-left: 300px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 14px;
+    color: #000000;
+}

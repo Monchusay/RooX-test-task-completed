@@ -1,26 +1,26 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {FC} from "react";
+import style from "./App.module.css";
+import UserListContainer from "./UserList/UserListContainer";
+import { Routes, BrowserRouter, Route } from "react-router-dom";
+import SortBarContainer from "./SortBar/SortBarContainer";
+import PersonProfileContainer from "./UserList/PersonProfile/PersonProfileContainer";
 
-function App() {
+const App:FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <div className={style.App}>
+          <div className={style.SortBar}>
+            <SortBarContainer />
+          </div>
+          <div className={style.MainObj}>
+            <Routes>
+              <Route path="/user/:id" element={<PersonProfileContainer />} />
+              <Route path="" element={<UserListContainer />} />
+            </Routes>
+          </div>
+        </div>
+      </BrowserRouter>
   );
-}
+};
 
 export default App;

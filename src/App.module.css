@@ -1,0 +1,22 @@
+.App {
+  width: 99.2vw;
+  height: 1500px;
+  display: flex;
+  justify-content: center;
+}
+.SortBar {
+  width: 152px;
+  height: 1452px;
+  background-color: #BDBDBD;
+  display: flex;
+  justify-content: center;
+}
+.MainObj {
+  width: 665px;
+  height: 1450px;
+  display: flex;
+  justify-content: center;
+  border-right: 2px solid #BDBDBD;
+  border-bottom: 2px solid #BDBDBD;
+  border-bottom-right-radius: 20px;
+}
