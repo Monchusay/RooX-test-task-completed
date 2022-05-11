@@ -1,44 +1,44 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 
 .SortBar {
-    width: 70%;
-    height: 8%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    margin-top: 30px;
+  width: 70%;
+  height: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin-top: 30px;
 }
 .SortBarHeader {
-    font-family: 'Roboto', sans-serif;
-    font-weight: 600;
-    font-size: 14px;
-    line-height: 14px;
-    color: #000000;
-    cursor: default;
+  font-family: "Roboto", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 14px;
+  color: #000000;
+  cursor: default;
 }
 .SortBarButton1 {
-    width: 86.13px;
-    height: 24.12px;
-    background-color: #4B51EF;
-    border-radius: 5px;
-    border: none;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    cursor: pointer;
+  width: 86.13px;
+  height: 24.12px;
+  background-color: #4b51ef;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  cursor: pointer;
 }
 .SortBarButton2 {
-    width: 86.13px;
-    height: 24.12px;
-    background-color: #4B51EF;
-    border-radius: 5px;
-    border: none;
-    font-family: 'Roboto', sans-serif;
-    color: #FFFFFF;
-    font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
-    cursor: pointer;
+  width: 86.13px;
+  height: 24.12px;
+  background-color: #4b51ef;
+  border-radius: 5px;
+  border: none;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 14px;
+  cursor: pointer;
 }

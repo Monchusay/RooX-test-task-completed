@@ -7,7 +7,7 @@
 .SortBar {
   width: 152px;
   height: 1452px;
-  background-color: #BDBDBD;
+  background-color: #bdbdbd;
   display: flex;
   justify-content: center;
 }
@@ -16,7 +16,7 @@
   height: 1450px;
   display: flex;
   justify-content: center;
-  border-right: 2px solid #BDBDBD;
-  border-bottom: 2px solid #BDBDBD;
+  border-right: 2px solid #bdbdbd;
+  border-bottom: 2px solid #bdbdbd;
   border-bottom-right-radius: 20px;
 }

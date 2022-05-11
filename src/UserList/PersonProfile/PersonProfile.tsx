@@ -7,9 +7,17 @@ import { MainObjPageState, User } from "../../Redux/MainObjPageReducer";
 import { PersonProfileDispatch } from "./PersonProfileContainer";
 
 const PersonProfile: FC<MainObjPageState & PersonProfileDispatch> = (props) => {
+
   const [user, setUser] = useState<User | null>(null);
   const [editable, setEditable] = useState<boolean>(false);
   const [invalidName, setInvalidName] = useState<boolean>(false);
+  const [invalidUserName, setInvalidUserName] = useState<boolean>(false);
+  const [invalidEmail, setInvalidEmail] = useState<boolean>(false);
+  const [invalidStreet, setInvalidStreet] = useState<boolean>(false);
+  const [invalidCity, setInvalidCity] = useState<boolean>(false);
+  const [invalidZipcode, setInvalidZipcode] = useState<boolean>(false);
+  const [invalidPhone, setInvalidPhone] = useState<boolean>(false);
+  const [invalidWebsite, setInvalidWebsite] = useState<boolean>(false);
 
   let { id } = useParams<{ id: string }>();
 
@@ -28,47 +36,81 @@ const PersonProfile: FC<MainObjPageState & PersonProfileDispatch> = (props) => {
   let OnNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setInvalidName(e.target.value.length === 0);
     if (user !== null) {
-      setUser({...user, name: e.target.value || ""});
+      setUser({ ...user, name: e.target.value });
     }
   };
   let OnUserNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInvalidUserName(e.target.value.length === 0);
     if (user !== null) {
-    setUser({ ...user, username: e.target.value });
-      }
+      setUser({ ...user, username: e.target.value });
+    }
   };
   let OnEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInvalidEmail(e.target.value.length === 0);
     if (user !== null) {
       setUser({ ...user, email: e.target.value });
     }
   };
   let OnStreetChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInvalidStreet(e.target.value.length === 0);
     if (user !== null) {
-      setUser({...user, address: {...user.address, street: e.target.value}});
+      setUser({
+        ...user,
+        address: { ...user.address, street: e.target.value },
+      });
     }
   };
   let OnCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInvalidCity(e.target.value.length === 0);
     if (user !== null) {
-      setUser({...user, address: {...user.address, city: e.target.value}});
+      setUser({ ...user, address: { ...user.address, city: e.target.value } });
     }
   };
   let OnZipcodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInvalidZipcode(e.target.value.length === 0);
     if (user !== null) {
-      setUser({...user, address: {...user.address, zipcode: e.target.value}});
+      setUser({
+        ...user,
+        address: { ...user.address, zipcode: e.target.value },
+      });
     }
   };
   let OnPhoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInvalidPhone(e.target.value.length === 0);
     if (user !== null) {
-      setUser({...user, phone: e.target.value});
+      setUser({ ...user, phone: e.target.value });
     }
   };
   let OnWebsiteChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setInvalidWebsite(e.target.value.length === 0);
     if (user !== null) {
-      setUser({...user, website: e.target.value});
+      setUser({ ...user, website: e.target.value });
     }
   };
 
   let onSubmit = () => {
     if (invalidName) {
+      return;
+    }
+    if (invalidUserName) {
+      return;
+    }
+    if (invalidEmail) {
+      return;
+    }
+    if (invalidStreet) {
+      return;
+    }
+    if (invalidCity) {
+      return;
+    }
+    if (invalidZipcode) {
+      return;
+    }
+    if (invalidPhone) {
+      return;
+    }
+    if (invalidWebsite) {
       return;
     }
     setEditable(false);
@@ -110,11 +152,14 @@ const PersonProfile: FC<MainObjPageState & PersonProfileDispatch> = (props) => {
               <input
                 value={user.username}
                 onChange={editable ? OnUserNameChange : () => {}}
-                className={
-                  editable
-                    ? style.PersonProfileEditableTextBox
-                    : style.PersonProfileTextBox
+                className={`${
+                  invalidUserName && style.PersonProfileInvalidTextBox
                 }
+                  ${
+                    editable
+                      ? style.PersonProfileEditableTextBox
+                      : style.PersonProfileTextBox
+                  }`}
               />
             </div>
             <div className={style.PersonProfileBox}>
@@ -122,11 +167,12 @@ const PersonProfile: FC<MainObjPageState & PersonProfileDispatch> = (props) => {
               <input
                 value={user.email}
                 onChange={editable ? OnEmailChange : () => {}}
-                className={
-                  editable
-                    ? style.PersonProfileEditableTextBox
-                    : style.PersonProfileTextBox
-                }
+                className={`${invalidEmail && style.PersonProfileInvalidTextBox}
+                  ${
+                    editable
+                      ? style.PersonProfileEditableTextBox
+                      : style.PersonProfileTextBox
+                  }`}
               />
             </div>
             <div className={style.PersonProfileBox}>
@@ -134,11 +180,14 @@ const PersonProfile: FC<MainObjPageState & PersonProfileDispatch> = (props) => {
               <input
                 value={user.address.street}
                 onChange={editable ? OnStreetChange : () => {}}
-                className={
-                  editable
-                    ? style.PersonProfileEditableTextBox
-                    : style.PersonProfileTextBox
+                className={`${
+                  invalidStreet && style.PersonProfileInvalidTextBox
                 }
+                  ${
+                    editable
+                      ? style.PersonProfileEditableTextBox
+                      : style.PersonProfileTextBox
+                  }`}
               />
             </div>
             <div className={style.PersonProfileBox}>
@@ -146,11 +195,12 @@ const PersonProfile: FC<MainObjPageState & PersonProfileDispatch> = (props) => {
               <input
                 value={user.address.city}
                 onChange={editable ? OnCityChange : () => {}}
-                className={
-                  editable
-                    ? style.PersonProfileEditableTextBox
-                    : style.PersonProfileTextBox
-                }
+                className={`${invalidCity && style.PersonProfileInvalidTextBox}
+                  ${
+                    editable
+                      ? style.PersonProfileEditableTextBox
+                      : style.PersonProfileTextBox
+                  }`}
               />
             </div>
             <div className={style.PersonProfileBox}>
@@ -158,11 +208,14 @@ const PersonProfile: FC<MainObjPageState & PersonProfileDispatch> = (props) => {
               <input
                 value={user.address.zipcode}
                 onChange={editable ? OnZipcodeChange : () => {}}
-                className={
-                  editable
-                    ? style.PersonProfileEditableTextBox
-                    : style.PersonProfileTextBox
+                className={`${
+                  invalidZipcode && style.PersonProfileInvalidTextBox
                 }
+                  ${
+                    editable
+                      ? style.PersonProfileEditableTextBox
+                      : style.PersonProfileTextBox
+                  }`}
               />
             </div>
             <div className={style.PersonProfileBox}>
@@ -170,11 +223,12 @@ const PersonProfile: FC<MainObjPageState & PersonProfileDispatch> = (props) => {
               <input
                 value={user.phone}
                 onChange={editable ? OnPhoneChange : () => {}}
-                className={
-                  editable
-                    ? style.PersonProfileEditableTextBox
-                    : style.PersonProfileTextBox
-                }
+                className={`${invalidPhone && style.PersonProfileInvalidTextBox}
+                  ${
+                    editable
+                      ? style.PersonProfileEditableTextBox
+                      : style.PersonProfileTextBox
+                  }`}
               />
             </div>
             <div className={style.PersonProfileBox}>
@@ -182,11 +236,14 @@ const PersonProfile: FC<MainObjPageState & PersonProfileDispatch> = (props) => {
               <input
                 value={user.website}
                 onChange={editable ? OnWebsiteChange : () => {}}
-                className={
-                  editable
-                    ? style.PersonProfileEditableTextBox
-                    : style.PersonProfileTextBox
+                className={`${
+                  invalidWebsite && style.PersonProfileInvalidTextBox
                 }
+                  ${
+                    editable
+                      ? style.PersonProfileEditableTextBox
+                      : style.PersonProfileTextBox
+                  }`}
               />
             </div>
             <div className={style.PersonProfileBoxComment}>
