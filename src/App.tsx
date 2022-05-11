@@ -15,7 +15,7 @@ const App:FC = () => {
           <div className={style.MainObj}>
             <Routes>
               <Route path="/user/:id" element={<PersonProfileContainer />} />
-              <Route path="" element={<UserListContainer />} />
+              <Route path="/*" element={<UserListContainer />} />
             </Routes>
           </div>
         </div>
