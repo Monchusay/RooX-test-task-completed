@@ -31,9 +31,9 @@ const UserList:FC<MainObjPageState & MainObjDispatch> = (props) => {
       <span className={style.MainObjHeader}>Список пользователей</span>
       <div>{props.isFetching ? <Preloader /> : null}</div>
       <div className={style.MainObjItem}>{MainObjElement}</div>
-      <div className={style.MainObjUsersCount}>
+      {/*<div className={style.MainObjUsersCount}>
         Найдено {props.users.length} пользователей
-      </div>
+      </div>*/}
     </div>
   );
 };
