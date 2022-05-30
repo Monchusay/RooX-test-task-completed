@@ -1,13 +1,13 @@
-import React, {FC, useEffect} from "react";
+import React, { FC, useEffect } from "react";
 import style from "./UserList.module.css";
 import UserListItem from "./UserListItem/UserListItem";
 import axios from "axios";
 import Preloader from "./Preloader/Preloader";
-import {MainObjPageState} from "../Redux/MainObjPageReducer";
-import {MainObjDispatch} from "./UserListContainer";
+import { MainObjPageState } from "../Redux/MainObjPageReducer";
+import { MainObjDispatch } from "./UserListContainer";
 
-const UserList:FC<MainObjPageState & MainObjDispatch> = (props) => {
-
+const UserList: FC<MainObjPageState & MainObjDispatch> = (props) => {
+  
   useEffect(() => {
     props.toggleIsFetching(true);
     axios.get(`https://jsonplaceholder.typicode.com/users`).then((response) => {

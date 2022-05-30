@@ -32,6 +32,7 @@ export interface MainObjPageState {
   users: User[];
   isFetching: boolean;
 }
+
 type ActionTypes = "SET_USERS" | "TOGGLE_IS_FETCHING" | "SORT_BY_NAME" | "SORT_BY_ADDRESS"
 
 const MainObjPageReducer = (
